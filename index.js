@@ -1,3 +1,5 @@
+import {getRandomInt} from './random.js';
+
 
 let arr = ['🐮', '🐯', '🐼', '🐨', '🐵', '🐷', '🐸'];
 let text = document.querySelector('.text');
@@ -6,7 +8,6 @@ let arrayWrite = document.querySelector('.array');
 let setWrite = document.querySelector('.set');
 let emotionSet = new Set();
 let emotionArray = [];
-
 
 text.value = arr[getRandomInt(7)];
 
@@ -19,12 +20,6 @@ function addEmotions() {
     setWrite.innerHTML = `${Array.from(emotionSet)}`;
     text.value = arr[getRandomInt(7)];
 }
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-
 
 button.addEventListener('click', addEmotions)
 
